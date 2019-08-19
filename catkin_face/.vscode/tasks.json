@@ -1,0 +1,179 @@
+{
+	"version": "0.1.0",
+	"command": "bash",
+	"args": [
+		"-c"
+	],
+	"isShellCommand": true,
+	"showOutput": "always",
+	"suppressTaskName": true,
+	"tasks": [
+		{
+			"taskName": "Debug",
+			"args": [
+				"catkin_make -C ${workspaceRoot} -DCMAKE_BUILD_TYPE=Debug"
+			],
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"absolute"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"taskName": "Release",
+			"args": [
+				"catkin_make -C ${workspaceRoot}"
+			],
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"absolute"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"taskName": "Debug (isolated)",
+			"args": [
+				"catkin_make_isolated -C ${workspaceRoot} -DCMAKE_BUILD_TYPE=Debug"
+			],
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"absolute"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"taskName": "Release (isolated)",
+			"args": [
+				"catkin_make_isolated -C ${workspaceRoot}"
+			],
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"absolute"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"taskName": "Debug (remote)",
+			"args": [
+				"rm -rf ${workspaceRoot}/el/lib/*; ssh rikirobot@robot 'echo -e \"#!/bin/bash --login\\ncatkin_make -C /home/rikirobot/catkin_face -DCMAKE_BUILD_TYPE=Debug\" > /tmp/roswstmp.sh; chmod 755 /tmp/roswstmp.sh; /tmp/roswstmp.sh'; scp -r rikirobot@robot:/home/rikirobot/catkin_face/devel/lib/\\* ${workspaceRoot}/el/lib"
+			],
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"absolute"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			},
+			"isBuildCommand": true
+		},
+		{
+			"taskName": "Release (remote)",
+			"args": [
+				"rm -rf ${workspaceRoot}/el/lib/*; ssh rikirobot@robot 'echo -e \"#!/bin/bash --login\\ncatkin_make -C /home/rikirobot/catkin_face\" > /tmp/roswstmp.sh; chmod 755 /tmp/roswstmp.sh; /tmp/roswstmp.sh'; scp -r rikirobot@robot:/home/rikirobot/catkin_face/devel/lib/\\* ${workspaceRoot}/el/lib"
+			],
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"absolute"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"taskName": "Debug (remote isolated)",
+			"args": [
+				"rm -rf ${workspaceRoot}/el_isolated/*; ssh rikirobot@robot 'echo -e \"#!/bin/bash --login\\ncatkin_make_isolated -C /home/rikirobot/catkin_face -DCMAKE_BUILD_TYPE=Debug\" > /tmp/roswstmp.sh; chmod 755 /tmp/roswstmp.sh; /tmp/roswstmp.sh'; scp -r rikirobot@robot:/home/rikirobot/catkin_face/devel_isolated/\\* ${workspaceRoot}/el_isolated"
+			],
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"absolute"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"taskName": "Release (remote isolated)",
+			"args": [
+				"rm -rf ${workspaceRoot}/el_isolated/*; ssh rikirobot@robot 'echo -e \"#!/bin/bash --login\\ncatkin_make_isolated -C /home/rikirobot/catkin_face\" > /tmp/roswstmp.sh; chmod 755 /tmp/roswstmp.sh; /tmp/roswstmp.sh'; scp -r rikirobot@robot:/home/rikirobot/catkin_face/devel_isolated/\\* ${workspaceRoot}/el_isolated"
+			],
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"absolute"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"taskName": "Remote Deploy",
+			"args": [
+				"ssh rikirobot@robot 'rm -rf /home/rikirobot/catkin_face; mkdir /home/rikirobot/catkin_face'; scp -r ${workspaceRoot}/src rikirobot@robot:/home/rikirobot/catkin_face/src; ssh rikirobot@robot 'rm /home/rikirobot/catkin_face/src/CMakeLists.txt; echo -e \"#!/bin/bash --login\\ncatkin_init_workspace /home/rikirobot/catkin_face/src\" > /tmp/roswstmp.sh; chmod 755 /tmp/roswstmp.sh; /tmp/roswstmp.sh'; echo \"Deploy Finished!\""
+			]
+		}
+	]
+}

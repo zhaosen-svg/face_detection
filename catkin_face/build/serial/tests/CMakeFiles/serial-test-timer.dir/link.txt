@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/serial-test-timer.dir/unit/unix_timer_tests.cc.o  -o /home/riki/catkin_face/devel/lib/serial/serial-test-timer  -L/home/riki/catkin_face/build/gtest -rdynamic ../../gtest/libgtest.so /home/riki/catkin_face/devel/lib/libserial.so -lpthread -lrt -lpthread -Wl,-rpath,/home/riki/catkin_face/build/gtest:/home/riki/catkin_face/devel/lib 

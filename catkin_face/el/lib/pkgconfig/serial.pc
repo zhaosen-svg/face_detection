@@ -1,0 +1,8 @@
+prefix=/home/rikirobot/catkin_face/devel
+
+Name: serial
+Description: Description of serial
+Version: 1.2.1
+Cflags: -I/home/rikirobot/catkin_face/src/serial/include
+Libs: -L/home/rikirobot/catkin_face/devel/lib -lserial
+Requires: 

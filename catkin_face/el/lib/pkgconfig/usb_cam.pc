@@ -1,0 +1,8 @@
+prefix=/home/rikirobot/catkin_face/devel
+
+Name: usb_cam
+Description: Description of usb_cam
+Version: 0.3.6
+Cflags: -I/home/rikirobot/catkin_face/src/usb_cam/include
+Libs: -L/home/rikirobot/catkin_face/devel/lib -lusb_cam
+Requires: 

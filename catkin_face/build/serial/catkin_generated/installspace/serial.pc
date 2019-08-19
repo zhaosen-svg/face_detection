@@ -1,0 +1,8 @@
+prefix=/home/riki/catkin_face/install
+
+Name: serial
+Description: Description of serial
+Version: 1.2.1
+Cflags: -I/home/riki/catkin_face/install/include
+Libs: -L/home/riki/catkin_face/install/lib -lserial
+Requires: 

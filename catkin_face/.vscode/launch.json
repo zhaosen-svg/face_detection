@@ -1,0 +1,38 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "C++",
+			"type": "gdb",
+			"request": "launch",
+			"target": "${file}",
+			"cwd": "${workspaceRoot}"
+		},
+		{
+			"name": "C++ (remote)",
+			"type": "gdb",
+			"request": "launch",
+			"target": "dev${relativeFile}",
+			"cwd": "${workspaceRoot}",
+			"ssh": {
+				"host": "robot",
+				"user": "rikirobot",
+				"keyfile": "/home/riki/.ssh/id_rsa",
+				"cwd": "/home/rikirobot/catkin_face"
+			}
+		},
+		{
+			"name": "Python",
+			"type": "python",
+			"request": "launch",
+			"stopOnEntry": true,
+			"pythonPath": "${config:python.pythonPath}",
+			"program": "${file}",
+			"debugOptions": [
+				"WaitOnAbnormalExit",
+				"WaitOnNormalExit",
+				"RedirectOutput"
+			]
+		}
+	]
+}

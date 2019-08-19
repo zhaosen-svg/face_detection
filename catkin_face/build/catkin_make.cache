@@ -1,0 +1,2 @@
+face_tracker_pkg:serial:usb_cam
+-DCATKIN_DEVEL_PREFIX=/home/riki/catkin_face/devel -DCMAKE_INSTALL_PREFIX=/home/riki/catkin_face/install -G Unix Makefiles
